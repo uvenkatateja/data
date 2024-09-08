@@ -1,0 +1,49 @@
+.ant-layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: grey; /* Default Ant Design dark theme background */
+}
+
+.ant-typography h1 {
+  font-size: 60px;
+  font-weight: 600;
+  color: white; /* Adjust to fit the Ant Design header theme */
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  margin: 0; /* To remove extra space */
+}
+
+.ant-menu {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Space between menu items */
+  background: transparent; /* Remove background for the horizontal menu */
+  border-bottom: none; /* Remove bottom border */
+}
+
+.ant-menu-item {
+  font-size: 18px;
+  font-weight: 500;
+  color: white; /* Set to white for dark header */
+  cursor: pointer;
+}
+
+.ant-menu-item-active,
+.ant-menu-item-selected {
+  font-weight: 600;
+  color: #1890ff; /* Ant Design primary color for active/selected menu item */
+}
+
+.ant-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+
+  font-weight: 600;
+  color: white; /* Icon button to match header theme */
+}
