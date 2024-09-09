@@ -1,5 +1,5 @@
+
 "use client";
-import Image from "next/image";
 import styles from "./page.module.css";
 import { useDispatch } from "react-redux";
 import { AppDispatch, useAppSelector } from "@/redux/store";
@@ -18,13 +18,23 @@ export default function Home() {
             Welcome to the <strong>DATA</strong>
           </h1>
           <br />
-          <button
-            onClick={() => {
-              router.push("/login");
-            }}
-          >
-            Login
-          </button>
+          <div>
+            <button
+              onClick={() => {
+                router.push("/login");
+              }}
+            >
+              Login
+            </button>
+            &nbsp;
+            <button
+              onClick={() => {
+                router.push("/signup");
+              }}
+            >
+              Sign Up
+            </button>
+          </div>
         </div>
       ) : (
         <div className={styles.center}>
