@@ -49,7 +49,7 @@
   left: 0;
   right: 0;
   height: 200px;
-  background: linear-gradient(45deg, #4776E6, #8E54E9);
+  background: linear-gradient(45deg, #2c3e50, #3498db);
   transform: skewY(-4deg);
   transform-origin: top left;
   z-index: 0;
@@ -65,7 +65,7 @@
   padding: 1.5rem 2rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -73,7 +73,7 @@
 .header h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(45deg, #4776E6, #8E54E9);
+  background: linear-gradient(45deg, #2c3e50, #3498db);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -83,7 +83,7 @@
 }
 
 .shareButton {
-  background: linear-gradient(45deg, #4776E6, #8E54E9);
+  background: linear-gradient(45deg, #2c3e50, #3498db);
   color: white;
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -95,14 +95,15 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: 0 4px 15px rgba(71, 118, 230, 0.2);
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .shareButton:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(71, 118, 230, 0.3);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+  background: linear-gradient(45deg, #34495e, #2980b9);
 }
 
 .shareButton svg {
@@ -122,35 +123,34 @@
   background: white;
   border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 12px 36px rgba(31, 38, 135, 0.15);
-  border: 1px solid rgba(71, 118, 230, 0.1);
+  box-shadow: 0 12px 36px rgba(44, 62, 80, 0.15);
+  border: 1px solid rgba(44, 62, 80, 0.1);
 }
 
 .table th {
-  background: linear-gradient(45deg, #4776E6, #8E54E9);
-  color: black;
-  font-weight: 800;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  color: white;
+  font-weight: 700;
   padding: 1.5rem 1.25rem;
   text-align: left;
   text-transform: uppercase;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .table td {
   padding: 1.25rem;
-  border-bottom: 1px solid rgba(71, 118, 230, 0.1);
-  color: black;
-  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+  color: #2c3e50;
+  font-size: 1.05rem;
   transition: all 0.3s ease;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .table tr:hover td {
-  background-color: rgba(71, 118, 230, 0.05);
+  background-color: rgba(52, 152, 219, 0.05);
   transform: scale(1.005);
-  box-shadow: 0 4px 12px rgba(71, 118, 230, 0.1);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
 }
 
 .table tr:last-child td {
@@ -161,71 +161,64 @@
   width: 2rem;
   height: 2rem;
   cursor: pointer;
-  color: #4776E6;
+  color: #3498db;
   transition: all 0.4s ease;
   padding: 0.4rem;
   border-radius: 50%;
-  background: rgba(71, 118, 230, 0.1);
-  box-shadow: 0 2px 8px rgba(71, 118, 230, 0.1);
+  background: rgba(52, 152, 219, 0.1);
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
 }
 
 .viewIcon:hover {
-  color: #8E54E9;
+  color: #2c3e50;
   transform: scale(1.15) rotate(8deg);
-  background: rgba(142, 84, 233, 0.15);
-  box-shadow: 0 4px 12px rgba(142, 84, 233, 0.2);
-}
-
-/* Loading animation for table rows */
-@keyframes slideIn {
-  from { 
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to { 
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.table tbody tr {
-  animation: slideIn 0.5s ease forwards;
-  animation-delay: calc(var(--index) * 0.1s);
-  opacity: 0;
+  background: rgba(44, 62, 80, 0.15);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
 }
 
 /* Filename cell specific styles */
 .table td:first-child {
-  font-weight: 700;
-  color: black;
-  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.05rem;
 }
 
 /* File type cell specific styles */
 .table td:nth-child(2) {
   text-transform: capitalize;
-  color: black;
-  font-weight: 700;
-  font-size: 1.1rem;
+  color: #34495e;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 /* Email cells specific styles */
 .table td:nth-child(3),
 .table td:nth-child(4) {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 1.1rem;
-  color: black;
-  font-weight: 600;
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 500;
 }
 
 /* Date cell specific styles */
 .table td:nth-child(5) {
-  font-size: 1.1rem;
-  color: black;
-  font-weight: 600;
+  font-size: 0.95rem;
+  color: #34495e;
+  font-weight: 500;
 }
 
-/* Responsive styles */
+/* Desktop (large screens) */
+@media (min-width: 1200px) {
+  .table th {
+    font-size: 1.1rem;
+  }
+  
+  .table td {
+    font-size: 1.05rem;
+  }
+}
+
+/* Laptop and smaller desktop */
 @media (max-width: 1024px) {
   .allfiles {
     padding: 1.5rem;
@@ -240,12 +233,18 @@
     font-size: 2rem;
   }
   
-  .table th,
+  .table th {
+    font-size: 1rem;
+    padding: 1.25rem 1rem;
+  }
+  
   .table td {
+    font-size: 0.95rem;
     padding: 1rem;
   }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
   .allfiles::before {
     height: 150px;
@@ -266,45 +265,37 @@
     -webkit-overflow-scrolling: touch;
   }
   
-  .table th,
+  .table th {
+    font-size: 0.95rem;
+    padding: 1rem 0.875rem;
+  }
+  
   .table td {
-    padding: 1rem;
-    font-size: 1rem;
-    min-width: 150px; /* Ensure minimum width for better readability */
+    font-size: 0.9rem;
+    padding: 0.875rem;
+    min-width: 140px;
   }
   
   .shareButton {
     width: 100%;
     justify-content: center;
     padding: 0.875rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
   .allfiles {
     padding: 0.75rem;
   }
   
   .header h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   
-  .table th,
-  .table td {
-    padding: 0.875rem;
-    font-size: 0.95rem;
-    min-width: 120px; /* Slightly smaller minimum width for mobile */
-  }
-
-  .viewIcon {
-    width: 1.75rem;
-    height: 1.75rem;
-    padding: 0.3rem;
-  }
-
-  /* Stack the table on mobile for better readability */
   .table thead {
-    display: none; /* Hide the header on mobile */
+    display: none;
   }
 
   .table tbody tr {
@@ -312,23 +303,24 @@
     margin-bottom: 1rem;
     background: white;
     border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
   }
 
   .table tbody td {
     display: block;
     text-align: left;
     padding: 0.75rem 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+    font-size: 0.9rem;
   }
 
   .table tbody td::before {
     content: attr(data-label);
-    float: left;
+    display: block;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.75rem;
-    color: #4776E6;
+    color: #3498db;
     margin-bottom: 0.25rem;
   }
 
@@ -336,4 +328,46 @@
     border-bottom: none;
     text-align: center;
   }
+
+  .viewIcon {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.3rem;
+  }
+  
+  /* Specific cell styles for mobile */
+  .table td:first-child {
+    font-size: 1rem;
+  }
+  
+  .table td:nth-child(2) {
+    font-size: 0.9rem;
+  }
+  
+  .table td:nth-child(3),
+  .table td:nth-child(4) {
+    font-size: 0.85rem;
+  }
+  
+  .table td:nth-child(5) {
+    font-size: 0.85rem;
+  }
+}
+
+/* Loading animation for table rows */
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody tr {
+  animation: slideIn 0.5s ease forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+  opacity: 0;
 }
