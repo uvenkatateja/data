@@ -288,41 +288,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.backButton {
-  position: fixed;
-  top: 0.75rem;
-  left: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 24px;
-  height: 24px;
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  border-radius: 50%;
-  color: #2c3e50;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  backdrop-filter: blur(8px);
-  z-index: 100;
-}
-
-.backButton:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateX(-2px);
-}
-
-.backButton svg {
-  width: 12px;
-  height: 12px;
-  transition: transform 0.2s ease;
-}
-
-.backButton:hover svg {
-  transform: translateX(-1px);
-}
-
 .authpage .inputcontaner {
   margin-bottom: 1.5rem;
   width: 100%;
@@ -477,42 +442,6 @@
   transform: translateY(0);
 }
 
-.backButton {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background: white;
-  border: 2px solid #2c3e50;
-  border-radius: 1rem;
-  color: #2c3e50;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.backButton:hover {
-  background: #f8fafc;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
-}
-
-.backButton svg {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s ease;
-}
-
-.backButton:hover svg {
-  transform: translateX(-4px);
-}
-
 .uploadpopup {
   position: fixed;
   bottom: 2rem;
@@ -571,11 +500,6 @@
     padding: 1.5rem;
   }
   
-  .backButton {
-    top: 1.5rem;
-    left: 1.5rem;
-  }
-  
   .dropzone {
     height: 150px;
   }
@@ -588,13 +512,6 @@
   
   .authcontainer {
     padding: 1.25rem;
-  }
-  
-  .backButton {
-    top: 1rem;
-    left: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
   }
   
   .dropzone {
