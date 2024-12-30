@@ -390,12 +390,12 @@ const Page = () => {
             .sort((a, b) => new Date(b.sharedAt).getTime() - new Date(a.sharedAt).getTime())
             .map((file, index) => (
               <tr key={index} style={{ '--index': index } as React.CSSProperties}>
-                <td>{file.filename}</td>
-                <td>{file.fileType}</td>
-                <td>{file.senderemail}</td>
-                <td>{file.receiveremail}</td>
-                <td>{new Date(file.sharedAt).toLocaleString()}</td>
-                <td>
+                <td data-label="Filename">{file.filename}</td>
+                <td data-label="File Type">{file.fileType}</td>
+                <td data-label="Sender Email">{file.senderemail}</td>
+                <td data-label="Receiver Email">{file.receiveremail}</td>
+                <td data-label="Shared At">{new Date(file.sharedAt).toLocaleString()}</td>
+                <td data-label="View">
                   <svg
                     onClick={async () => {
                       let s3Url: string | null = await getImageUrls3(file.fileurl);
@@ -431,4 +431,3 @@ const Page = () => {
 };
 
 export default Page;
-
