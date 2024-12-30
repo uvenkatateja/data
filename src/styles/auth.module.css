@@ -249,337 +249,223 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
-  background: linear-gradient(135deg, #f6f8fb 0%, #e9f0f7 100%);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f8ff 0%, #e9ecef 100%);
   position: relative;
   overflow: hidden;
+  padding: 2rem;
 }
 
 .authpage::before {
   content: '';
   position: absolute;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 60%);
-  animation: pulse 15s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: translate(-25%, -25%) rotate(0deg); }
-  50% { transform: translate(-25%, -25%) rotate(180deg); }
-  100% { transform: translate(-25%, -25%) rotate(360deg); }
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  transform: skewY(-4deg);
+  transform-origin: top left;
+  z-index: 0;
 }
 
 .authcontainer {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  padding: 2.5rem;
-  width: 90%;
-  max-width: 600px;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    0 2px 4px rgba(52, 152, 219, 0.1),
-    0 4px 8px rgba(52, 152, 219, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  transform: translateY(20px);
-  animation: slideUp 0.5s ease forwards;
   position: relative;
   z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.4s ease-out;
 }
 
-.authcontainer::before {
-  content: '';
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.backButton {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #3498db, #2ecc71, #3498db);
-  border-radius: 24px;
-  z-index: -1;
-  opacity: 0.5;
-  filter: blur(24px);
-  animation: borderGlow 4s ease-in-out infinite;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-@keyframes borderGlow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.8; }
+.backButton:hover {
+  transform: translateX(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+  background: linear-gradient(45deg, #34495e, #2980b9);
 }
 
-.authpage h1 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: black;
-  margin-bottom: 1rem;
+.backButton svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.4s ease;
+}
+
+.backButton:hover svg {
+  transform: translateX(-4px);
 }
 
 .authpage .inputcontaner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 10px 0px;
-  gap: 5px;
-  width: 300px;
   margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-  animation-delay: calc(var(--index, 0) * 0.1s);
-}
-
-.authpage .inputcontaner:nth-child(1) { --index: 1; }
-.authpage .inputcontaner:nth-child(2) { --index: 2; }
-.authpage .inputcontaner:nth-child(3) { --index: 3; }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  width: 100%;
 }
 
 .authpage .inputcontaner label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+  margin-bottom: 0.75rem;
   color: #2c3e50;
   font-size: 1.1rem;
-  transform: translateY(0);
-  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .authpage .inputcontaner input {
   width: 100%;
   padding: 1rem 1.25rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid rgba(44, 62, 80, 0.1);
+  border-radius: 1rem;
   font-size: 1rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  color: #2c3e50;
+  font-weight: 500;
 }
 
 .authpage .inputcontaner input:focus {
-  border-color: #3498db;
-  box-shadow: 
-    0 0 0 3px rgba(52, 152, 219, 0.2),
-    0 4px 8px rgba(0, 0, 0, 0.05);
   outline: none;
-  transform: translateY(-1px);
-}
-
-.inputcontaner1 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 10px 0px;
-  gap: 5px;
-  width: 300px;
-}
-
-.inputcontaner1 .inputrow {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.inputcontaner1 input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0px 10px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: black;
-}
-
-.inputcontaner1 button {
-  width: 100px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  background-color: #000;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.inputcontaner1 label {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: black;
+  border-color: #3498db;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+  background: white;
 }
 
 .dropzone {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  height: 180px;
   border: 2px dashed #3498db;
-  border-radius: 16px;
+  border-radius: 1rem;
   padding: 2rem;
   text-align: center;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   background: rgba(52, 152, 219, 0.05);
-  position: relative;
-  overflow: hidden;
-}
-
-.dropzone::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  margin-bottom: 1.5rem;
 }
 
 .dropzone:hover {
-  background: rgba(52, 152, 219, 0.08);
-  transform: scale(1.02) translateY(-2px);
-  box-shadow: 
-    0 8px 16px rgba(0, 0, 0, 0.1),
-    0 2px 4px rgba(52, 152, 219, 0.1);
-}
-
-.dropzone:hover::before {
-  opacity: 1;
-}
-
-.droptext {
-  color: #2c3e50;
+  border-color: #2c3e50;
+  background: rgba(52, 152, 219, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(44, 62, 80, 0.15);
 }
 
 .droptext p {
+  color: #2c3e50;
   margin: 0.5rem 0;
   font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .filecard {
+  background: white;
+  border: 1px solid rgba(44, 62, 80, 0.1);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.05),
-    0 2px 4px rgba(52, 152, 219, 0.05);
-  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.3s ease;
-  border: 1px solid rgba(52, 152, 219, 0.1);
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
 }
 
 .filecard:hover {
   transform: translateY(-2px);
-  box-shadow: 
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    0 4px 8px rgba(52, 152, 219, 0.08);
+  box-shadow: 0 8px 16px rgba(44, 62, 80, 0.15);
+  border-color: #3498db;
 }
 
 .left p {
-  margin: 0.25rem 0;
+  margin: 0;
   color: #2c3e50;
 }
 
 .left p:first-child {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.1rem;
+  margin-bottom: 0.25rem;
 }
 
 .left p:last-child {
-  color: #7f8c8d;
+  color: #34495e;
   font-size: 0.9rem;
-}
-
-.right {
-  display: flex;
-  gap: 1rem;
+  font-weight: 500;
 }
 
 .right svg {
   width: 24px;
   height: 24px;
   cursor: pointer;
-  color: #34495e;
-  transition: all 0.2s ease;
+  color: #3498db;
+  transition: all 0.3s ease;
+  padding: 0.4rem;
+  border-radius: 50%;
+  background: rgba(52, 152, 219, 0.1);
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
 }
 
 .right svg:hover {
-  color: #3498db;
-  transform: scale(1.1);
+  color: #2c3e50;
+  transform: scale(1.15) rotate(8deg);
+  background: rgba(44, 62, 80, 0.15);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
 }
 
 .button1 {
   width: 100%;
   padding: 1rem 1.5rem;
-  background: linear-gradient(45deg, #3498db, #2980b9, #3498db);
-  background-size: 200% auto;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
   border: none;
-  border-radius: 12px;
+  border-radius: 1rem;
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(0);
-  box-shadow: 
-    0 4px 12px rgba(52, 152, 219, 0.2),
-    0 2px 4px rgba(52, 152, 219, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.button1::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: 0.5s;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
 }
 
 .button1:hover {
-  transform: translateY(-2px);
-  background-position: right center;
-  box-shadow: 
-    0 6px 16px rgba(52, 152, 219, 0.3),
-    0 4px 8px rgba(52, 152, 219, 0.2);
-}
-
-.button1:hover::before {
-  left: 100%;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+  background: linear-gradient(45deg, #34495e, #2980b9);
 }
 
 .button1:active {
   transform: translateY(0);
-}
-
-.authpage a {
-  font-size: 1rem;
-  font-weight: 500;
-  color: black;
-  margin-top: 1rem;
 }
 
 .uploadpopup {
@@ -588,103 +474,99 @@
   right: 2rem;
   background: linear-gradient(45deg, #2c3e50, #3498db);
   color: white;
-  padding: 1.25rem 2.5rem;
-  border-radius: 16px;
-  box-shadow: 
-    0 8px 24px rgba(0, 0, 0, 0.15),
-    0 4px 8px rgba(52, 152, 219, 0.15);
-  animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideIn 0.3s ease-out;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
 }
 
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
 .uploadpopup p {
   margin: 0;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .uploadpopup p::after {
   content: "";
+  display: inline-block;
   width: 16px;
   height: 16px;
   border: 2px solid white;
   border-top-color: transparent;
   border-radius: 50%;
+  margin-left: 0.75rem;
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.uploadbar {
-  width: 50vw;
-  height: 5px;
-  background-color: rgba(0, 128, 0, 0.189);
-}
-
-.uploadpopup .uploadsectionrow {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 768px) {
+  .authpage {
+    padding: 1.5rem;
+  }
+  
+  .authpage::before {
+    height: 150px;
+  }
+  
   .authcontainer {
     padding: 1.5rem;
-    width: 95%;
   }
-
-  .inputcontaner label {
-    font-size: 1rem;
+  
+  .backButton {
+    top: 1.5rem;
+    left: 1.5rem;
   }
-
-  .inputcontaner input {
-    padding: 0.875rem;
-  }
-
+  
   .dropzone {
-    padding: 1.5rem;
-  }
-
-  .droptext p {
-    font-size: 1rem;
-  }
-
-  .button1 {
-    padding: 0.875rem;
+    height: 150px;
   }
 }
 
 @media (max-width: 480px) {
+  .authpage {
+    padding: 1rem;
+  }
+  
   .authcontainer {
-    width: 90%;
+    padding: 1.25rem;
   }
-  .authpage h1 {
-    font-size: 1.5rem;
+  
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
   }
-  .authpage .inputcontaner,
-  .inputcontaner1,
+  
   .dropzone {
-    width: 100%;
+    height: 120px;
+    padding: 1rem;
   }
-  .authpage .button1 {
-    width: 100%;
+  
+  .droptext p {
+    font-size: 0.875rem;
   }
-  .dropzone {
-    height: 150px;
-  }
-  .uploadbar {
-    width: 70vw;
-  }
-  .uploadpopup p {
-    font-size: 1.2rem;
+  
+  .uploadpopup {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    text-align: center;
+    justify-content: center;
   }
 }
+
