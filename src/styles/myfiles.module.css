@@ -33,94 +33,124 @@
   cursor: pointer;
 }
  */
-
 .allfiles {
-  padding: 2rem;
+  padding: 2.5rem;
   max-width: 100%;
-  overflow-x: auto;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  background: linear-gradient(135deg, #f6f8ff 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.allfiles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(45deg, #4776E6, #8E54E9);
+  transform: skewY(-4deg);
+  transform-origin: top left;
+  z-index: 0;
 }
 
 .header {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2.5rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-  backdrop-filter: blur(4px);
+  margin-bottom: 3rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .header h1 {
-  font-size: 2rem;
-  background: linear-gradient(45deg, #1a73e8, #34a853);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #4776E6, #8E54E9);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
 }
 
 .shareButton {
-  background: linear-gradient(45deg, #1a73e8, #34a853);
+  background: linear-gradient(45deg, #4776E6, #8E54E9);
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
   border: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(26, 115, 232, 0.2);
+  gap: 0.75rem;
+  box-shadow: 0 4px 15px rgba(71, 118, 230, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .shareButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(26, 115, 232, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(71, 118, 230, 0.3);
 }
 
 .shareButton svg {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .shareButton:hover svg {
-  transform: rotate(15deg);
+  transform: rotate(20deg) scale(1.1);
 }
 
 .table {
+  position: relative;
+  z-index: 1;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   background: white;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+  box-shadow: 0 12px 36px rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(71, 118, 230, 0.1);
 }
 
 .table th {
-  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-  color: #1a73e8;
-  font-weight: 600;
-  padding: 1.25rem 1rem;
+  background: linear-gradient(45deg, #4776E6, #8E54E9);
+  color: white;
+  font-weight: 700;
+  padding: 1.5rem 1.25rem;
   text-align: left;
   text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .table td {
-  padding: 1rem;
-  border-bottom: 1px solid #f0f0f0;
-  color: #4a5568;
-  transition: background-color 0.2s;
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(71, 118, 230, 0.1);
+  color: #2d3748;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .table tr:hover td {
-  background-color: #f8f9fa;
+  background-color: rgba(71, 118, 230, 0.05);
+  transform: scale(1.005);
+  box-shadow: 0 4px 12px rgba(71, 118, 230, 0.1);
 }
 
 .table tr:last-child td {
@@ -128,58 +158,98 @@
 }
 
 .viewIcon {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
-  color: #1a73e8;
-  transition: all 0.3s ease;
-  padding: 0.25rem;
+  color: #4776E6;
+  transition: all 0.4s ease;
+  padding: 0.4rem;
   border-radius: 50%;
-  background: rgba(26, 115, 232, 0.1);
+  background: rgba(71, 118, 230, 0.1);
+  box-shadow: 0 2px 8px rgba(71, 118, 230, 0.1);
 }
 
 .viewIcon:hover {
-  color: #34a853;
-  transform: scale(1.1);
-  background: rgba(52, 168, 83, 0.1);
+  color: #8E54E9;
+  transform: scale(1.15) rotate(8deg);
+  background: rgba(142, 84, 233, 0.15);
+  box-shadow: 0 4px 12px rgba(142, 84, 233, 0.2);
 }
 
 /* Loading animation for table rows */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .table tbody tr {
-  animation: fadeIn 0.3s ease forwards;
+  animation: slideIn 0.5s ease forwards;
   animation-delay: calc(var(--index) * 0.1s);
   opacity: 0;
+}
+
+/* Filename cell specific styles */
+.table td:first-child {
+  font-weight: 600;
+  color: #4776E6;
+}
+
+/* File type cell specific styles */
+.table td:nth-child(2) {
+  text-transform: capitalize;
+  color: #8E54E9;
+  font-weight: 600;
+}
+
+/* Email cells specific styles */
+.table td:nth-child(3),
+.table td:nth-child(4) {
+  font-family: monospace;
+  font-size: 0.95rem;
+  letter-spacing: -0.5px;
+}
+
+/* Date cell specific styles */
+.table td:nth-child(5) {
+  font-size: 0.9rem;
+  color: #718096;
 }
 
 /* Responsive styles */
 @media (max-width: 1024px) {
   .allfiles {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   
   .header {
+    padding: 1.25rem;
     margin-bottom: 2rem;
   }
   
   .header h1 {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
   
   .table th,
   .table td {
-    padding: 0.75rem;
+    padding: 1rem;
   }
 }
 
 @media (max-width: 768px) {
+  .allfiles::before {
+    height: 150px;
+  }
+
   .header {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
     text-align: center;
     padding: 1.5rem;
   }
@@ -192,28 +262,35 @@
   
   .table th,
   .table td {
-    padding: 0.75rem;
-    font-size: 0.875rem;
+    padding: 0.875rem;
+    font-size: 0.9rem;
   }
   
   .shareButton {
     width: 100%;
     justify-content: center;
+    padding: 0.875rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .allfiles {
-    padding: 0.5rem;
+    padding: 1rem;
   }
   
   .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   
   .table th,
   .table td {
-    padding: 0.5rem;
-    font-size: 0.75rem;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .viewIcon {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.3rem;
   }
 }
