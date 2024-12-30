@@ -128,23 +128,23 @@
 
 .table th {
   background: linear-gradient(45deg, #4776E6, #8E54E9);
-  color: white;
-  font-weight: 700;
+  color: black;
+  font-weight: 800;
   padding: 1.5rem 1.25rem;
   text-align: left;
   text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .table td {
   padding: 1.25rem;
   border-bottom: 1px solid rgba(71, 118, 230, 0.1);
-  color: #2d3748;
-  font-size: 1rem;
+  color: black;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .table tr:hover td {
@@ -196,29 +196,33 @@
 
 /* Filename cell specific styles */
 .table td:first-child {
-  font-weight: 600;
-  color: #4776E6;
+  font-weight: 700;
+  color: black;
+  font-size: 1.1rem;
 }
 
 /* File type cell specific styles */
 .table td:nth-child(2) {
   text-transform: capitalize;
-  color: #8E54E9;
-  font-weight: 600;
+  color: black;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 /* Email cells specific styles */
 .table td:nth-child(3),
 .table td:nth-child(4) {
-  font-family: monospace;
-  font-size: 0.95rem;
-  letter-spacing: -0.5px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 600;
 }
 
 /* Date cell specific styles */
 .table td:nth-child(5) {
-  font-size: 0.9rem;
-  color: #718096;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 600;
 }
 
 /* Responsive styles */
@@ -258,12 +262,15 @@
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
   }
   
   .table th,
   .table td {
-    padding: 0.875rem;
-    font-size: 0.9rem;
+    padding: 1rem;
+    font-size: 1rem;
+    min-width: 150px; /* Ensure minimum width for better readability */
   }
   
   .shareButton {
@@ -275,7 +282,7 @@
 
 @media (max-width: 480px) {
   .allfiles {
-    padding: 1rem;
+    padding: 0.75rem;
   }
   
   .header h1 {
@@ -284,13 +291,49 @@
   
   .table th,
   .table td {
-    padding: 0.75rem;
-    font-size: 0.85rem;
+    padding: 0.875rem;
+    font-size: 0.95rem;
+    min-width: 120px; /* Slightly smaller minimum width for mobile */
   }
 
   .viewIcon {
     width: 1.75rem;
     height: 1.75rem;
     padding: 0.3rem;
+  }
+
+  /* Stack the table on mobile for better readability */
+  .table thead {
+    display: none; /* Hide the header on mobile */
+  }
+
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .table tbody td {
+    display: block;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #4776E6;
+    margin-bottom: 0.25rem;
+  }
+
+  .table tbody td:last-child {
+    border-bottom: none;
+    text-align: center;
   }
 }
