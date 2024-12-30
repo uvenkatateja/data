@@ -289,23 +289,21 @@
 }
 
 .backButton {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
+  justify-content: center;
+  padding: 0.35rem;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.5rem;
-  color: white;
-  font-size: 0.875rem;
-  font-weight: 500;
+  border: none;
+  border-radius: 0.375rem;
+  color: #2c3e50;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   backdrop-filter: blur(8px);
-  z-index: 10;
+  z-index: 100;
 }
 
 .backButton:hover {
@@ -314,13 +312,13 @@
 }
 
 .backButton svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s ease;
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
 }
 
 .backButton:hover svg {
-  transform: translateX(-2px);
+  transform: translateX(-1px);
 }
 
 .authpage .inputcontaner {
