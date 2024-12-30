@@ -568,13 +568,23 @@ const Page = () => {
   return (
     <div className={styles.authpage}>
       <button 
-        onClick={() => Router.push('/myfiles')} 
+        onClick={() => router.push('/myfiles')} 
         className={styles.backButton}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          strokeWidth={2} 
+          stroke="currentColor"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" 
+          />
         </svg>
-        Back to Files
+        Back
       </button>
       <div className={styles.authcontainer}>
         <div className={styles.inputcontaner}>
@@ -664,25 +674,6 @@ const Page = () => {
         <button className={styles.button1} type="button" onClick={handleUpload}>
           Send
         </button>
-        <button 
-          onClick={() => router.push('/myfiles')} 
-          className={styles.backButton}
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            strokeWidth={2} 
-            stroke="currentColor"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" 
-            />
-          </svg>
-          Back to Files
-        </button>
       </div>
 
       {uploading && (
@@ -695,4 +686,3 @@ const Page = () => {
 };
 
 export default Page;
-
