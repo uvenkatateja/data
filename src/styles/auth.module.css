@@ -290,40 +290,37 @@
 
 .backButton {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
-  z-index: 1;
-  background: linear-gradient(45deg, #2c3e50, #3498db);
-  color: white;
-  padding: 0.75rem 1.25rem;
-  border-radius: 1rem;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  top: 1.5rem;
+  left: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  z-index: 10;
 }
 
 .backButton:hover {
-  transform: translateX(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
-  background: linear-gradient(45deg, #34495e, #2980b9);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-2px);
 }
 
 .backButton svg {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.4s ease;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
 }
 
 .backButton:hover svg {
-  transform: translateX(-4px);
+  transform: translateX(-2px);
 }
 
 .authpage .inputcontaner {
@@ -617,4 +614,3 @@
     justify-content: center;
   }
 }
-
