@@ -855,7 +855,7 @@ export default function Home() {
                   }}
                   onClick={() => router.push("/signup")}
                 >
-                  Sign Up Free
+                  Sign Up
                 </button>
               </div>
             </div>
